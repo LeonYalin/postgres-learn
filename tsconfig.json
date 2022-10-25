@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es5",
+    "lib": ["ESNext", "dom"],
+    "module": "commonjs",
+    "types": ["node"],
+    "sourceMap": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["app.ts", "src/**/*.ts"],
+}

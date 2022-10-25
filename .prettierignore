@@ -1,0 +1,6 @@
+# Ignore everything:
+/*
+
+# Except the app code:
+!/src
+!app.ts
