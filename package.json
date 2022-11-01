@@ -7,7 +7,7 @@
     "start": "nodemon",
     "build": "rimraf ./dist && tsc",
     "serve": "npm run build && node dist/app.js",
-    "mysql:cli": "docker exec -it postgres-learn-postgres-1 sh -c 'psql -U root -W root -d test_db'",
+    "psql:cli": "docker exec -it postgres-learn-postgres-1 sh -c 'psql -U root -W root -d sales_db2'",
     "up": "docker-compose up"
   },
   "repository": {

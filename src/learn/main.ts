@@ -1,5 +1,5 @@
-import introduction from './1.introduction';
+import basics from './1.basics';
 
 export function main() {
-  introduction();
+  basics();
 }

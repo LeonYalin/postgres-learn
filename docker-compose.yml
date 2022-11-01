@@ -1,17 +1,17 @@
 version: "3.8"
 services:
-  node:
-    build: .
-    env_file: ./.env
-    command: npm start
-    volumes:
-      - .:/app/
-    ports:
-      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
-    depends_on: 
-      - postgres
-    environment: 
-      MYSQL_HOST: mysqldb
+  # node:
+  #   build: .
+  #   env_file: ./.env
+  #   command: npm start
+  #   volumes:
+  #     - .:/app/
+  #   ports:
+  #     - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+  #   depends_on: 
+  #     - postgres
+  #   environment: 
+  #     MYSQL_HOST: mysqldb
   postgres:
     image: postgres
     restart: always
@@ -36,30 +36,5 @@ services:
       - postgres
     volumes:
       - pgadmin_data:/etc/pgadmin_data
-  # mysqldb:
-  #   image: mysql:5.7
-  #   env_file: ./.env
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-  #     MYSQL_DATABASE: $MYSQL_DATABASE
-  #   volumes:
-  #     - ./src/learn/config/mysql.conf.d :/etc/mysql/mysql.conf.d
-  #     - ./src/learn/files:/app/
-  # mysql_workbench:
-  #   image: lscr.io/linuxserver/mysql-workbench
-  #   container_name: mysql_workbench
-  #   environment:
-  #     - PUID=501
-  #     - PGID=20
-  #     - TZ=Europe/London
-  #   volumes:
-  #     - pgadmin_data:/etc/mysql_workbench
-  #   ports:
-  #     - $MYSQL_WORKBENCH_LOCAL_PORT:$MYSQL_WORKBENCH_DOCKER_PORT
-  #   depends_on: 
-  #     - mysqldb
-  #   cap_add:
-  #     - IPC_LOCK
-  #   restart: unless-stopped
 volumes:
     pgadmin_data:
